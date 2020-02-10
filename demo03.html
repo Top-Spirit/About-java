@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>JavaScript</title>
+
+    <style type="text/css">
+        div{
+            border: 1px solid red ;
+            width: 300px;
+            height: 300px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        //在div中添加内容
+        function show() {
+            //获得到div对象
+            var div = document.getElementById("divid");
+            //设置对应内容
+            div.innerHTML = "<font color='#7fffd4'> hello woeld！</font>" ;
+        }
+        //获取焦点事件
+        function show2() {
+            document.getElementById("spanid").innerHTML = "<font color='green'>请输入用户名</font>";
+        }
+        //失去焦点事件
+        function show3() {
+            document.getElementById("spanid").innerHTML = "<font color='red'> 用户名已经存在</font>" ;
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="divid"></div>
+<input type="button" value="按钮" onclick="show()"/>
+<hr/>
+用户名：<input type="text" name="username" onfocus="show2()" onblur="show3()"/> <span id="spanid"/>
+
+</body>
+</html>
