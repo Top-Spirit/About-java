@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>JavaScript</title>
+
+    <script type="text/javascript">
+        function addli() {
+            // 创建li结点
+            var li = document.createElement("li") ;
+            // 创建广州文本的字符串
+            var textNode = document.createTextNode("广州") ;
+            // 把广州文本结点添加到li结点上
+            li.appendChild(textNode) ;
+            // 把li结点添加到ul结点下
+            document.getElementById("ulid").appendChild(li) ;
+        }
+
+        function dele(obj) {
+            obj.parentElement.removeChild(obj) ;
+        }
+    </script>
+</head>
+<body>
+
+<ul id="ulid">
+    <li>北京</li>
+    <li>上海</li>
+    <li onclick="dele(this)">深圳</li>
+</ul>
+
+<input type="button" value="添加" onclick="addli()"/>
+
+</body>
+</html>
