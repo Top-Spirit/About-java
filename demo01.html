@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选/全不选</title>
+    <script type="text/javascript">
+        // 全选
+        function setAll() {
+            //得到所有name为hobby的标签
+            var hobbys = document.getElementsByName("hobby") ;
+            // 遍历
+            for (var i = 0; i < hobbys.length; i++) {
+                //获得每一个复选框
+                var hobby = hobbys[i] ;
+                //将每一个复选框的checked属性设置为true
+                hobby.checked = true ;
+            }
+        }
+        //全不选
+        function setNo() {
+            var hobbys = document.getElementsByName("hobby") ;
+            for (var i = 0; i < hobbys.length; i++) {
+                var hobby = hobbys[i] ;
+                hobby.checked = false ;
+            }
+        }
+        //反选
+        function setOther() {
+            var hobbys = document.getElementsByName("hobby") ;
+            for (var i = 0; i < hobbys.length; i++) {
+                var hobby = hobbys[i] ;
+                if (hobby.checked == true){
+                    hobby.checked = false ;
+                }else{
+                    hobby.checked = true ;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input type="checkbox" name = "hobby"/>篮球<br/>
+<input type="checkbox" name = "hobby"/>足球<br/>
+<input type="checkbox" name = "hobby"/>羽毛球<br/>
+<input type="checkbox" name = "hobby"/>乒乓球<br/>
+
+<input type = "button" value="全选" onclick="setAll()"/>
+<input type = "button" value="全不选" onclick="setNo()"/>
+<input type = "button" value="反选" onclick="setOther()"/>
+
+</body>
+
+</html>
