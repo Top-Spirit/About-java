@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选/全不选</title>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"> </script>
+    <script type="text/javascript">
+        $(function () {
+            // 全选
+            $("#setAll").click(function () {
+                $("input[type='checkbox']").attr("checked","checked") ;
+            });
+            //全不选
+            $("#setNo").click(function () {
+                $("input[type='checkbox']").removeAttr("checked") ;
+            });
+
+            //第一个复选框
+            $("#boxid").click(function () {
+                if ($("#boxid:checked").length == 1) {
+                    $("input[type='checkbox']").attr("checked", "checked");
+                }else {
+                    $("input[type='checkbox']").removeAttr("checked") ;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<input type="checkbox" id="boxid">全选/全不选<br/>
+<input type="checkbox" name="hobby">篮球<br/>
+<input type="checkbox" name="hobby">足球<br/>
+<input type="checkbox" name="hobby">排球<br/>
+<input type="checkbox" name="hobby">羽毛球<br/>
+
+<input type="button" value="全选" id="setAll">
+<input type="button" value="全不选" id="setNo">
+
+</body>
+</html>

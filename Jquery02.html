@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小练习</title>
+    <!--引入jquery-->
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            //隐藏最后一个div
+            // var num = $("div").length;
+            // alert(num);
+            $("div:last").hide(1000);
+            //alert($("div:last").html());
+            //绑定事件
+
+            $("a").click(function () {
+                if($("div:hidden").length == 1){
+                    //显示最后一个div
+                    $("div:last").show(1000) ;
+                    //修改a标签
+                    $("a").text("隐藏更多");
+                }else {
+                    //修改a标签
+                    $("a").text("显示更多");
+                    //隐藏最后一个div
+                    $("div:last").hide(1000) ;
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<div>新闻标题。。。</div>
+<a>显示更多</a>
+<div>很多内容</div>
+
+</body>
+</html>
